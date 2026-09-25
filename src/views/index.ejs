@@ -12,12 +12,24 @@
 
             <div class="reponsive-table">
               <table class="table my-3">
-                <tr>
-                  <td>Luis</td>
-                  <td>Otavio</td>
-                  <td>0000000</td>
-                  <td>email@email.com</td>
-                </tr>
+                <% contatos.forEach(contato=> { %>
+                  <tr>
+                    <td>
+                      <%= contato.nome %>
+                    </td>
+                    <td>
+                      <%= contato.sobrenome %>
+                    </td>
+                    <td>
+                      <%= contato.telefone %>
+                    </td>
+                    <td>
+                      <%= contato.email %>
+                    </td>
+                    <td><a href="/contato/index/<%= contato._id %>">Editar</a></td>
+                    <td><a class="text-danger" href="/contato/delete/<%= contato._id %>">Excluir</a></td>
+                  </tr>
+                  <% }); %>
               </table>
             </div>
         </div>
